@@ -2,6 +2,6 @@ export default {
     testEnvironment: 'node',
     testMatch: ["**/*.test.js"], 
     verbose: true, 
-    // collectCoverage: true, 
-    watchAndCollectCoverage: true,
+    collectCoverage: true, 
+    // watchAndCollectCoverage: true,
 }
