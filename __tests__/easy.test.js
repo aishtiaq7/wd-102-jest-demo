@@ -14,7 +14,7 @@ describe("add function", () => {
   });
 
   test("multiple additions here", ()=>{
-    expect(add(1, 2)).toBe(3);
+    expect(add(1, 2)).toBe(30);
     expect(add(5, 10)).toBe(15);
     expect(add(0, 0)).toBe(0);
     expect(add(0, 0)).toBe(0);
