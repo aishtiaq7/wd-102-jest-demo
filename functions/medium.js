@@ -46,3 +46,15 @@ if( returnValue !== "NaN"){
 
 
 */
+
+
+export function uniqueTags(csv){
+    const tags = csv
+        .split(",")
+        .map(tag=>tag.trim())
+        .filter(Boolean);
+    return Array.from(new Set(tags));
+}; 
+
+
+console.log(uniqueTags("js, node, express, js, node, node")); // Output: ["js", "node", "express"]
