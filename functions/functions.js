@@ -32,3 +32,10 @@ export function repeatMessage(message, times, logFun) {
   }
   return times;
 }
+
+export function buildGreeting(name, formatFn) {
+  const formatter =
+    typeof formatFn === "function" ? formatFn : (n) => `Hello,${n}!`;
+
+  return formatter(name);
+}

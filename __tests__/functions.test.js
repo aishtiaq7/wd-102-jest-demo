@@ -1,4 +1,4 @@
-import { shout, sumAndNotify, repeatMessage } from "../functions/functions";
+import { shout, sumAndNotify, repeatMessage, buildGreeting } from "../functions/functions";
 import { jest } from "@jest/globals";
 
 describe("Moc functions", () => {
@@ -53,4 +53,20 @@ describe("repeatMessage", ()=>{
         expect(notify).toHaveBeenCalledTimes(3);
 
     });
+})
+
+describe("buildGreeting", ()=> {
+    test("uses injected formatter", ()=> {
+        const NAME = 'Alice';
+        const formatter = jest.fn().mockReturnValue(`Hi,${NAME}!`); 
+
+        const tempFunction = ()=> `Hi,${NAME}!`
+
+        const result = buildGreeting(NAME, formatter);
+
+        expect(result).toBe(`Hi,${NAME}!`);
+        expect(formatter).toHaveBeenCalledWith(NAME);
+    })
+
+
 })
