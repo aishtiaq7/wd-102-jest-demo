@@ -8,3 +8,8 @@ export function divide(a, b) {
   }
   return a / b;
 }
+
+
+export function isEven(num){
+    return num % 2 === 0;
+}
